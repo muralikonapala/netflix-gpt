@@ -1,4 +1,4 @@
-# Netfilx - GPT using Vite
+# Netfilx - GPT using Vite Installation
   - Create react app by using Vite
   - npx create vite@latest netflix-gpt --template react
   - select the framework - React
@@ -6,6 +6,18 @@
   - npm i - install nodemodules
   - npm run dev - to run the project
   
+# Netfilx - GPT
+  - Create React App
+  - Configured TailWind
+  - Header
+  - Routing
+  - Login Form
+  - Sign Up Form
+  - Form Validation
+  - useRef Hook
+
+
+
   # Configured Tailwind CSS
   - npm install tailwindcss @tailwindcss/vite
   - 'vite.config.js' file config with import and plugin statement as per tailwindcss configuration
