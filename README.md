@@ -29,4 +29,17 @@
     - Search Bar
     - Movie Suggestions
 
+# Components 
+- Login.jsx
+- Header.jsx
+- Body.jsx
+- Browse.jsx
+- SignUp.jsx
+
+- App.jsx
+
+# React Router - DATA MODE
+
+- npm i react-router-dom
+- npm i react-router
 
