@@ -22,7 +22,10 @@
   - Created Redux Store with userSlice
   - Implimented Signout
   - Updated Profile
-  - 
+  - BugFix- signup user displayname and profile picture update
+  - BugFix- If the user is not logged in redirect browser to login page and vice-versa
+  - Unsubscribed to the onAuthStateChanged callback
+  - Add harcoded values to the constants file
 
 
 

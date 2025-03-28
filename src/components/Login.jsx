@@ -8,14 +8,14 @@ import {
 } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
 import { auth } from '../utils/firebase';
-import { useNavigate } from 'react-router-dom';
+import { USER_AVATAR } from '../utils/constants';
 import { addUser } from '../utils/userSlice';
 
 const Login = () => {
 
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
+  
   const dispatch = useDispatch();
  
   const name = useRef(null);
@@ -43,8 +43,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              'https://avatars.githubusercontent.com/u/54413790?v=4&size=64',
+            photoURL:USER_AVATAR,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -56,13 +55,12 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate('/browse');
             })
             .catch((error) => {
               setErrorMessage(error.message);
             });
           console.log(user);
-          navigate('/browse');
+          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -79,8 +77,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate('/browse');
+          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -121,13 +118,13 @@ const toggleSignInForm = () => {
             ref={email}
             type='text'
             placeholder='Enter your email'
-            className='p-3 bg-gray-700 mb-4  w-full'
+            className='p-2 bg-gray-700 mb-4  w-full'
           />
           <input
             ref={password}
             type='password'
             placeholder='Passwords'
-            className='p-3 mb-5 bg-gray-700 w-full'
+            className='p-2 mb-5 bg-gray-700 w-full'
           />
           <p className="text-red-700 my-4">{errorMessage}</p>
 
